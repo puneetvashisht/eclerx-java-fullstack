@@ -14,6 +14,21 @@ public class Employee {
         this.salary = salary;
     }
 
+    // methods
+    public void incrementSalary(int amount){
+        this.salary = this.salary + amount;
+    }
+
+    public String changeName(String newName){
+        this.name = newName;
+        // return 1;
+        return this.name;
+    }
+
+    public String toString(){
+        return "Name: " + this.name + " Salary: " + this.salary;
+    }
+
     public static void main(String[] args) {
      
         Employee e1 = new Employee(12, "Ravi", 34343.34);
@@ -23,6 +38,13 @@ public class Employee {
         System.out.println(e1.id);
         System.out.println(e1.name);
         System.out.println(e1.salary);
+
+        e1.incrementSalary(5000);
+        e1.changeName("Ravikant");
+
+        // System.out.println(e1.salary);
+        // System.out.println(e1.name);
+        System.out.println(e1.toString());
 
         Employee e2 = new Employee(1, "Priya", 35455.33);
         // e2.name = "Priya";
