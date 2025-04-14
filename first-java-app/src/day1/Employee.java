@@ -7,6 +7,7 @@ public class Employee {
     String name;
     double salary;
 
+
     // constructor
     public Employee(int id, String name, double salary){
         this.id = id;
@@ -16,7 +17,17 @@ public class Employee {
 
     // methods
     public void incrementSalary(int amount){
-        this.salary = this.salary + amount;
+        if(amount>0 && amount<=10000){
+            this.salary = this.salary + amount;
+        }
+        else if(amount > 10000){
+            System.out.println("Voila! Great increment");
+            this.salary = this.salary + amount;
+        }
+        else{
+            System.out.println("Can't increment salary!");
+        }
+        
     }
 
     public String changeName(String newName){
@@ -39,7 +50,7 @@ public class Employee {
         System.out.println(e1.name);
         System.out.println(e1.salary);
 
-        e1.incrementSalary(5000);
+        e1.incrementSalary(15000);
         e1.changeName("Ravikant");
 
         // System.out.println(e1.salary);
