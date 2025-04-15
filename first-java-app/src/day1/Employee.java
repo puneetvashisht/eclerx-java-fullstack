@@ -45,6 +45,8 @@ public class Employee {
         Employee e1 = new Employee(12, "Ravi", 34343.34);
         // e1.name = "Ravi";
         // e1.id = 34344;
+        //  int i = 34;
+        //  long l = 3;
     
         System.out.println(e1.id);
         System.out.println(e1.name);
@@ -60,5 +62,15 @@ public class Employee {
         Employee e2 = new Employee(1, "Priya", 35455.33);
         // e2.name = "Priya";
         System.out.println(e2.name);
+
+        // Employee employees[] = {e1, e2};
+        Employee employees[] = new Employee[2];
+        employees[0] = e1;
+        employees[1] = e2;
+
+
+        for(Employee e : employees){
+            System.out.println(e);
+        }
     }
 }
