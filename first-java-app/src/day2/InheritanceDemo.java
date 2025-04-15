@@ -12,11 +12,12 @@ package day2;
 // surgeon is a doctor
 
 
-
 class Vehicle{
     int maxSpeed;
     String color;
-    // Engine engine;
+
+    // composition
+    Engine engine;
 
     public Vehicle(){
 
@@ -25,11 +26,17 @@ class Vehicle{
         this.maxSpeed = maxSpeed;
         this.color = color;
     }
+    public Vehicle(int maxSpeed, String color, Engine engine) {
+        this(maxSpeed, color);
+        this.engine = engine;
+    }
 
     public void start(){
         System.out.println("Vehicle starting...");
     }
 }
+
+// inheritance
 class Car extends Vehicle{
     String model;
 
@@ -40,10 +47,16 @@ class Car extends Vehicle{
         super(maxSpeed, color);
         this.model = model;
     }
+
+    public Car(int maxSpeed, String color, Engine engine, String model) {
+        super(maxSpeed, color, engine);
+        this.model = model;
+    }
     @Override
     public String toString() {
-        return "Car [maxSpeed=" + maxSpeed + ", color=" + color + ", model=" + model + "]";
+        return "Car [maxSpeed=" + maxSpeed + ", color=" + color + ", engine=" + engine + ", model=" + model + "]";
     }
+    
     
 }
 
@@ -70,7 +83,8 @@ class Plane extends Vehicle{
 public class InheritanceDemo {
 
     public static void main(String[] args) {
-        Car car = new Car(300, "Black", "Tata Nexon");
+        Engine engine = new Engine(1500);
+        Car car = new Car(300, "Black", engine,  "Tata Nexon" );
 
         Plane plane = new Plane(1000, "Red", 3000);
 
